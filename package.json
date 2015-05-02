@@ -1,0 +1,20 @@
+{
+  "name": "email-server",
+  "version": "1.0.0",
+  "description": "Server for Sending Custom Emails using Node JS.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"    
+  },
+  "author": "Kartik Jain",
+  "license": "UNLICENSE",
+  "dependencies": {
+    "express": "*",
+    "http": "*",
+    "url": "*",
+    "body-parser": "*",
+    "nodemailer": "*",    
+    "edit-google-spreadsheet": "*",
+    "dotenv": "*"
+  }
+}

@@ -27,7 +27,7 @@ var serviceEmailAccount = process.env.serviceEmailAccount;
 
 // create reusable transporter object using SMTP transport
 var transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: 'Zoho',
     // secureConnection: false,
     auth: {
         user: process.env.username,
@@ -76,41 +76,6 @@ app.post('/redspot', function(req, res) {
     var mailOptions = {
         from: 'MASH Project <redspot@mashglobal.org>', // sender address
         to: email, // list of receivers
-        subject: 'Thank you for your response ', // Subject line
-        html: body
-    };
-
-    // send mail with defined transport object
-    transporter.sendMail(mailOptions, function(error, info) {
-        if (error) {
-            console.log(error);
-            res.json({
-                "reply": "error"
-            });
-        } else {
-            console.log('Message sent: ' + info.response);
-            res.json({
-                "reply": "success"
-            });
-        }
-    });
-});
-
-//  New route with CC feature
-app.post('/cctest', function(req, res) { // Change the route name
-    var story, gender, app, email, name, ccEmail;
-    story = req.body.story;
-    gender = req.body.gender;
-    app = req.body.app;
-    email = req.body.email;
-    ccEmail = req.body.cc;
-    name = req.body.name;
-
-    console.log(email);
-    var mailOptions = {
-        from: 'MASH Project <redspot@mashglobal.org>', // sender address
-        to: email, // list of receivers
-        cc: ccEmail, // Comma separated list or an array of recipients e-mail addresses
         subject: 'Thank you for your response ', // Subject line
         html: body
     };

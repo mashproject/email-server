@@ -53,7 +53,7 @@ app.post('/nonSpeaker', function(req, res) {
         from: 'MASH Project <events@mashglobal.org>', // sender address
         to: email, // list of receivers
         cc: ccEmail, // Comma separated list or an array of recipients e-mail addresses
-        subject: '#DoWhatYouLove #MASHCamp ', // Subject line
+        subject: 'Invitation - #DoWhatYouLove #MASHCamp ', // Subject line
         html: body
     };
 
@@ -99,7 +99,7 @@ app.post('/speaker', function(req, res) {
         from: 'MASH Project <events@mashglobal.org>', // sender address
         to: email, // list of receivers
         cc: ccEmail, // Comma separated list or an array of recipients e-mail addresses
-        subject: '#DoWhatYouLove #MASHCamp ', // Subject line
+        subject: 'Invitation - #DoWhatYouLove #MASHCamp ', // Subject line
         html: body
     };
 

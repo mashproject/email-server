@@ -50,7 +50,7 @@ app.post('/redspot', function(req, res) {
 
     //store data in google form
     Spreadsheet.load({
-        debug: true,
+        debug: false,
         spreadsheetId: spreadsheetId,
         worksheetId: worksheetId,
         oauth: {

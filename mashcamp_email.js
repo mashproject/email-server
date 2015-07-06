@@ -19,16 +19,17 @@ app.all('*', function(req, res, next) {
     next();
 });
 
+
 app.listen(PORT);
 console.log('Listening on ' + PORT);
 
 // create reusable transporter object using SMTP transport
 var transporter = nodemailer.createTransport({
-    service: 'zoho',
+    service: 'Zoho',
     secureConnection: false,
     auth: {
-        user: process.env.username,
-        pass: process.env.password
+        user: process.env.username_camp,
+        pass: process.env.password_camp
     }
 });
 
@@ -50,10 +51,10 @@ app.post('/nonSpeaker', function(req, res) {
         return console.error("Email validation failed");
     }
     var mailOptions = {
-        from: 'MASH Project <redspot@mashglobal.org>', // sender address
+        from: 'MASH Project <events@mashglobal.org>', // sender address
         to: email, // list of receivers
         cc: ccEmail, // Comma separated list or an array of recipients e-mail addresses
-        subject: 'Thank you for your response ', // Subject line
+        subject: '#DoWhatYouLove #MASHCamp ', // Subject line
         html: body
     };
 
@@ -72,7 +73,6 @@ app.post('/nonSpeaker', function(req, res) {
         }
     });
 });
-
 
 app.post('/speaker', function(req, res) {
     var email, name, ccEmail, startTime, endTime;
@@ -98,10 +98,10 @@ app.post('/speaker', function(req, res) {
     });
 
     var mailOptions = {
-        from: 'MASH Project <redspot@mashglobal.org>', // sender address
+        from: 'MASH Project <events@mashglobal.org>', // sender address
         to: email, // list of receivers
         cc: ccEmail, // Comma separated list or an array of recipients e-mail addresses
-        subject: 'Thank you for your response ', // Subject line
+        subject: '#DoWhatYouLove #MASHCamp ', // Subject line
         html: body
     };
 

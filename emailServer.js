@@ -27,7 +27,9 @@ var serviceEmailAccount = process.env.serviceEmailAccount;
 
 // create reusable transporter object using SMTP transport
 var transporter = nodemailer.createTransport({
-    service: 'zoho',
+
+
+    service: 'Zoho',
     secureConnection: false,
     auth: {
         user: process.env.username,
